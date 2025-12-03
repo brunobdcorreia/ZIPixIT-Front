@@ -1,0 +1,144 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #0096fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 80px;  /* Space for fixed toolbar */
+}
+
+.center-square {
+    background: #fff;
+    border-radius: 24px;
+    width: 80vw;
+    height: 12.5vw;
+    max-width: 600px;
+    max-height: 400px;
+    min-width: 200px;
+    min-height: 200px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px); 
+    width: 100%;
+    padding: 0 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0.5rem 0;
+}
+
+.illust-url-input {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.illust-range-input {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.illust-range-tooltip-icon {
+    display: inline-block;
+    position: relative;
+    background: #eee;
+    color: #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.illust-range-tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 13px;
+}
+
+.illust-range-tooltip-icon:hover .illust-range-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.download-button {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    background: #ffffff;
+    color: #0096fa;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}

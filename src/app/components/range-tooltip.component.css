@@ -1,0 +1,40 @@
+.illust-range-tooltip-icon {
+    display: inline-block;
+    position: relative;
+    background: #eee;
+    color: #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.illust-range-tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    font-size: 13px;
+    white-space: normal;
+}
+
+.illust-range-tooltip-icon:hover .illust-range-tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
