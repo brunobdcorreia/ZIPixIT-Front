@@ -17,6 +17,7 @@ export const translations: Record<Language, Record<string, string>> = {
     tooltipText: 'Specify a range of illustrations to download. Use \'-\' for open-ended ranges (e.g., \'5-\' for all from 5 onwards, \'-20\' for all up to 20).',
     download: 'Download',
     downloading: 'Downloading...',
+    showImagesAsTheyDownload: 'Show images as they download',
     about: 'About',
     aboutText: `<p>
                   <strong>Zipixit</strong> is a simple tool designed to help you download illustrations from Pixiv.
@@ -44,6 +45,7 @@ export const translations: Record<Language, Record<string, string>> = {
     tooltipText: 'ダウンロードするイラストの範囲を指定してください。開放範囲には「-」を使用ください. (例:「5-」は5枚目の画像以降すべて、「-20」は20枚目の画像まですべて)',
     download: 'ダウンロード',
     downloading: 'ダウンロード中...',
+    showImagesAsTheyDownload: 'ダウンロードを完了した画像を表示する',
     about: 'ZIPixitについて',
     aboutText: `<p>
                   <strong>Zipixit</strong>はPixivから簡単にイラストをダウンロードすることを優先し設計されたツール.
