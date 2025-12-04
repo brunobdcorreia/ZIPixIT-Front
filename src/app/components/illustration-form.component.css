@@ -16,6 +16,14 @@ form {
     margin-bottom: 2rem;
 }
 
+.toggle-text {
+    font-family: 'Sawarabi Gothic Regular', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    color: #f3f3f3;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 .subtitle h2 {
     font-family: 'Sawarabi Gothic Regular', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.5rem;
@@ -59,29 +67,76 @@ form {
 
 .radio-group {
     display: flex;
-    justify-content: space-around;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.radio-group label {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
-    color: #f3f3f3;
-    /* padding: 0.5rem 1rem; */
-    /* border: 1px solid #ccc; */
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-}
-
-.row-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;    
-    justify-content: baseline;
-    gap: 1rem;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 0 1px 0 rgba(0, 94, 224, 0.15), 0 6px 12px 0 rgba(0, 94, 224, 0.15);
+    padding: 0.75rem;
+    border-radius: 99px;
     width: 100%;
+    max-width: 30%;
+    margin: 0 auto 1rem auto;
+    gap: 0;
+}
+
+.radio-group * {
+    z-index: 2;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    flex: 1;
+    font-size: 0.85rem;
+    color: #666666;
+    font-weight: 500;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+    position: relative;
+    padding: 0 0.5rem;
+}
+
+/* Glider background - positioned absolutely */
+.radio-group::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 30px;
+    width: calc(33.333% - 0.5rem);
+    background-color: #e6eef9;
+    z-index: 1;
+    border-radius: 99px;
+    transition: left 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    left: 0.75rem;
+    top: 0.75rem;
+}
+
+/* Move glider when first radio is checked (default) */
+.radio-group input[id="zip"]:checked ~ .radio-group::before,
+.radio-group:has(input[id="zip"]:checked)::before {
+    left: 0.75rem;
+}
+
+/* Move glider when second radio is checked */
+.radio-group:has(input[id="7z"]:checked)::before {
+    left: calc(33.333% + 0.375rem);
+}
+
+/* Move glider when third radio is checked */
+.radio-group:has(input[id="tar.gz"]:checked)::before {
+    left: calc(66.666% + 0rem);
+}
+
+/* Checked state - change text color */
+.radio-group input[type="radio"]:checked + .tab {
+    color: #185ee0;
+    font-weight: 600;
 }
 
 .download-button {
@@ -107,6 +162,96 @@ form {
     cursor: not-allowed;
 }
 
+.toggle-label {
+    display: flex;
+    align-items: normal;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f3f3f3;
+}
+
+.toggle-checkbox {
+    display: none;
+}
+
+.toggle-slider {
+    width: 60px;
+    height: 30px;
+    background-color: #cccccc;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25) inset;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.toggle-slider::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left: 3px;
+}
+
+.toggle-checkbox:checked + .toggle-slider {
+    background-color: #2196F3;
+}
+
+.toggle-checkbox:checked + .toggle-slider::before {
+    transform: translateX(30px);
+}
+
+.toggle-checkbox:active + .toggle-slider::before {
+    transform: translateX(15px);
+}
+
+.checkbox:checked ~ .toggle-slider::before {
+  transform: translateX(30px);
+  box-shadow: 0 0 10px 3px rgb(0, 0, 0, 0.25);
+}
+
+.checkbox:checked ~ .toggle-slider {
+  background-color: #2196F3;
+}
+
+.checkbox:active ~ .toggle-slider::before {
+  transform: translate(0);
+}
+
+.row-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.row-container input {
+    flex: 1;
+    max-width: 600px;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.row-container app-range-tooltip {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
 @font-face {
     font-family: 'Sawarabi Gothic Regular';
     src: url('../fonts/SawarabiGothic-Regular.ttf') format('truetype');
@@ -123,5 +268,39 @@ form {
 
     .subtitle p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .radio-group {
+        max-width: 350px;
+        padding: 0.5rem;
+    }
+
+    .radio-group .tab {
+        font-size: 0.75rem;
+        height: 28px;
+    }
+
+    .radio-group::before {
+        height: 28px;
+        top: 0.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .radio-group {
+        max-width: 280px;
+        padding: 0.4rem;
+    }
+
+    .radio-group .tab {
+        font-size: 0.65rem;
+        height: 26px;
+    }
+
+    .radio-group::before {
+        height: 26px;
+        top: 0.4rem;
     }
 }

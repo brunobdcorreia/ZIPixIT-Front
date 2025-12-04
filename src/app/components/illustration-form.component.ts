@@ -61,7 +61,7 @@ import { Observable } from 'rxjs';
             [disabled]="isLoading()"
             checked
           />
-          <label for="zip">.zip</label>
+          <label class="tab" for="zip">.zip</label>
           <input 
             id="7z" 
             type="radio" 
@@ -70,7 +70,7 @@ import { Observable } from 'rxjs';
             value="7z"
             [disabled]="isLoading()"
           />
-          <label for="7z">.7z</label>
+          <label class="tab" for="7z">.7z</label>
           <input 
             id="tar.gz" 
             type="radio" 
@@ -79,7 +79,7 @@ import { Observable } from 'rxjs';
             value="tar.gz"
             [disabled]="isLoading()"
           />
-          <label for="tar.gz">.tar.gz</label>
+          <label class="tab" for="tar.gz">.tar.gz</label>
         </div>
       </div>
 
@@ -93,6 +93,7 @@ import { Observable } from 'rxjs';
             [disabled]="isLoading()"
             class="toggle-checkbox"
           />
+          <div class="toggle-slider"></div>
           <span class="toggle-text">{{ languageService.getTranslation('showImagesAsTheyDownload') }}</span>
         </label>
       </div>
