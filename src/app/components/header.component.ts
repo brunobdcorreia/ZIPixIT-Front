@@ -9,7 +9,7 @@ import { AboutModalComponent } from './about-modal.component';
   template: `
     <header class="toolbar">
       <div class="toolbar-left">
-        <h1 class="app-title">{{ title() }}</h1>
+        <h1 class="app-title">ZIPixIT</h1>
       </div>
 
       <div class="toolbar-right">

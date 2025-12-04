@@ -27,6 +27,9 @@ export const translations: Record<Language, Record<string, string>> = {
                 </p>
                 <p>
                   The tool will download all the illustrations and package them into a single compressed file for easy storage and sharing.
+                </p>
+                <p>
+                  ZIPixIT is not affiliated with Pixiv in any capacity. Please respect Pixiv's terms of service when using this tool.
                 </p>`,
     invalidUrl: 'Please enter a valid Pixiv illustration URL',
     failedDownload: 'Failed to download illustrations'
@@ -46,15 +49,18 @@ export const translations: Record<Language, Record<string, string>> = {
     download: 'ダウンロード',
     downloading: 'ダウンロード中...',
     showImagesAsTheyDownload: 'ダウンロードを完了した画像を表示する',
-    about: 'ZIPixitについて',
+    about: 'ZIPixITについて',
     aboutText: `<p>
-                  <strong>Zipixit</strong>はPixivから簡単にイラストをダウンロードすることを優先し設計されたツール.
+                  <strong>ZIPixIT</strong>はPixivから簡単にイラストをダウンロードすることを優先し設計されたツール.
                 </p>
                 <p>
                   PixivのイラストURLやIDを入力し任意でダウンロードする画像の数の範囲を指定し好きなファイル形式 (ZIP, 7Z, TAR等)を選んでください.
                 </p>
                 <p>
                   このツールは、すべてのイラストをダウンロードし、簡単に保存および共有できるように圧縮します.
+                </p>
+                <p>
+                  ZIPixITはPixivとは一切関係ありません。ZIPixITを使用する際は、Pixivの利用規約を遵守してください.
                 </p>`,
     invalidUrl: '有効なPixivのリンクを入力してください',
     failedDownload: 'イラストのダウンロードに失敗しました'
