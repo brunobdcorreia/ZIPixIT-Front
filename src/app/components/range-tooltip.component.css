@@ -1,8 +1,9 @@
 .illust-range-tooltip-icon {
     display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
     background: #eee;
-    color: #333;
+    color: #0096fa;
     border-radius: 50%;
     width: 20px;
     height: 20px;
