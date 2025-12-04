@@ -21,87 +21,91 @@ import { Observable } from 'rxjs';
   ],
   template: `
     <div class="subtitle" [innerHTML]="subtitleHtml"></div>
+    
     <form (ngSubmit)="onSubmit()">
-      <div class="full-width-container url-input-wrapper">
-        <input 
-          class="illust-url-input" 
-          name="illust_url" 
-          type="text" 
-          autocomplete="off"
-          [placeholder]="languageService.getTranslation('enterUrl')"
-          [(ngModel)]="illustUrl"
-          [disabled]="isLoading()"
-          required
-        />
-      </div>  
-      <div class="row-container">
-        <input
-          class="illust-range-input"
-          name="illust_range"
-          type="text"
-          autocomplete="off"
-          pattern="[0-9\-]+"
-          inputmode="numeric"
-          [placeholder]="languageService.getTranslation('enterRange')"
-          [(ngModel)]="illustRange"
-          [disabled]="isLoading()"
-        />
-        <app-range-tooltip></app-range-tooltip>
-      </div>
-
-      <!-- Compression Format Selection -->
-      <div class="full-width-container radio-wrapper">
-        <div class="radio-group">
+      <div class="form-content">
+        <div class="full-width-container url-input-wrapper">
           <input 
-            id="zip" 
-            type="radio" 
-            [(ngModel)]="compressionFormat"  
-            name="compression_format" 
-            value="zip"
+            class="illust-url-input" 
+            name="illust_url" 
+            type="text" 
+            autocomplete="off"
+            [placeholder]="languageService.getTranslation('enterUrl')"
+            [(ngModel)]="illustUrl"
             [disabled]="isLoading()"
-            checked
+            required
           />
-          <label class="tab" for="zip">.zip</label>
-          <input 
-            id="7z" 
-            type="radio" 
-            [(ngModel)]="compressionFormat"  
-            name="compression_format" 
-            value="7z"
+        </div>  
+        
+        <div class="row-container">
+          <input
+            class="illust-range-input"
+            name="illust_range"
+            type="text"
+            autocomplete="off"
+            pattern="[0-9\-]+"
+            inputmode="numeric"
+            [placeholder]="languageService.getTranslation('enterRange')"
+            [(ngModel)]="illustRange"
             [disabled]="isLoading()"
           />
-          <label class="tab" for="7z">.7z</label>
-          <input 
-            id="tar.gz" 
-            type="radio" 
-            [(ngModel)]="compressionFormat"  
-            name="compression_format" 
-            value="tar.gz"
-            [disabled]="isLoading()"
-          />
-          <label class="tab" for="tar.gz">.tar.gz</label>
+          <app-range-tooltip></app-range-tooltip>
         </div>
-      </div>
 
-      <!-- Live Display Toggle -->
-      <div class="full-width-container toggle-wrapper">
-        <label class="toggle-label">
-          <input 
-            type="checkbox" 
-            [(ngModel)]="showLiveDisplay"
-            name="show-live-display"
-            [disabled]="isLoading()"
-            class="toggle-checkbox"
-          />
-          <div class="toggle-slider"></div>
-          <span class="toggle-text">{{ languageService.getTranslation('showImagesAsTheyDownload') }}</span>
-        </label>
-      </div>
+        <!-- Compression Format Selection -->
+        <div class="full-width-container radio-wrapper">
+          <div class="radio-group">
+            <input 
+              id="zip" 
+              type="radio" 
+              [(ngModel)]="compressionFormat"  
+              name="compression_format" 
+              value="zip"
+              [disabled]="isLoading()"
+              checked
+            />
+            <label class="tab" for="zip">.zip</label>
+            <input 
+              id="7z" 
+              type="radio" 
+              [(ngModel)]="compressionFormat"  
+              name="compression_format" 
+              value="7z"
+              [disabled]="isLoading()"
+            />
+            <label class="tab" for="7z">.7z</label>
+            <input 
+              id="tar.gz" 
+              type="radio" 
+              [(ngModel)]="compressionFormat"  
+              name="compression_format" 
+              value="tar.gz"
+              [disabled]="isLoading()"
+            />
+            <label class="tab" for="tar.gz">.tar.gz</label>
+          </div>
+        </div>
 
-      <div class="full-width-container button-wrapper">
-        <button class="download-button" type="submit" [disabled]="isLoading()">
-          {{ isLoading() ? languageService.getTranslation('downloading') : languageService.getTranslation('download') }}
-        </button>
+        <!-- Live Display Toggle -->
+        <div class="full-width-container toggle-wrapper">
+          <label class="toggle-label">
+            <input 
+              type="checkbox" 
+              [(ngModel)]="showLiveDisplay"
+              name="show-live-display"
+              [disabled]="isLoading()"
+              class="toggle-checkbox"
+            />
+            <div class="toggle-slider"></div>
+            <span class="toggle-text">{{ languageService.getTranslation('showImagesAsTheyDownload') }}</span>
+          </label>
+        </div>
+
+        <div class="full-width-container button-wrapper">
+          <button class="download-button" type="submit" [disabled]="isLoading()">
+            {{ isLoading() ? languageService.getTranslation('downloading') : languageService.getTranslation('download') }}
+          </button>
+        </div>
       </div>
     </form>
 
