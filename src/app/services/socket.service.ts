@@ -42,12 +42,12 @@ export class SocketService {
     }
 
     private initializeSocket(): void {
-        this.socket = io(window.location.origin), {
+        this.socket = io(window.location.origin, {
             reconnection: true,
             reconnectionAttempts: 5,
             reconnectionDelay: 1000,
             reconnectionDelayMax: 5000,
-        }
+        });
 
         this.socket.on(WebSocketEvent.CONNECT, () => {
             this.isConnected.set(true);
@@ -129,14 +129,15 @@ export class SocketService {
             return;
         }
 
+        console.log("Compression Format:", compressionFormat);
         this.downloadError.next(null);
         this.downloadCompleted.next(false);
         this.downloadedImages.set([]);
 
         this.socket.emit(WebSocketEvent.START_DOWNLOAD, {
             illust_url: illustUrl,
-            selectionRange: selectionRange || null,
-            compression_format: compressionFormat
+            compression_format: compressionFormat,
+            selection_range: selectionRange || null,
         });
     }
 

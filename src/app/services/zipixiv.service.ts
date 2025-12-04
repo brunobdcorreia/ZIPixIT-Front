@@ -72,11 +72,11 @@ export class ZipixivService {
 
   constructor(private http: HttpClient) { }
 
-  downloadIllustrations(illustUrl: string, compressionFormat: string, illustRange?: string): Observable<DownloadResponse> {
+  downloadIllustrations(illustUrl: string, illustRange: string, compressionFormat: string): Observable<DownloadResponse> {
     const payload = {
       illust_url: illustUrl,
-      illust_range: illustRange,
-      compressionFormat: compressionFormat || ''
+      selection_range: illustRange || '',
+      compression_format: compressionFormat
     };
 
     return this.http.post(

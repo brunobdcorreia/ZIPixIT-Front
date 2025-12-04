@@ -5,9 +5,9 @@ export type Language = 'en' | 'ja';
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     title: 'ZIPixit',
-    subtitle: `<p>
+    subtitle: `<h2>
                 Your favourite illustrations and manga,
-              </p>  
+              </h2>  
               <p>
                 easily zipped up and stored.
               </p>  
@@ -51,7 +51,7 @@ export const translations: Record<Language, Record<string, string>> = {
                   <strong>Zipixit</strong>はPixivから簡単にイラストをダウンロードすることを優先し設計されたツール.
                 </p>
                 <p>
-                  PixivのイラストIDを入力し任意でダウンロードする画像の数の範囲を指定し好きなファイル形式 (ZIP, 7Z, TAR等)を選んでください.
+                  PixivのイラストURLやIDを入力し任意でダウンロードする画像の数の範囲を指定し好きなファイル形式 (ZIP, 7Z, TAR等)を選んでください.
                 </p>
                 <p>
                   このツールは、すべてのイラストをダウンロードし、簡単に保存および共有できるように圧縮します.
