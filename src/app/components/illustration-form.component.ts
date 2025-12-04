@@ -185,19 +185,20 @@ export class IllustrationFormComponent {
       }
     });
 
+    console.log("Format selected:", this.compressionFormat());
     // Start WebSocket download
     this.socketService.startWebSocketDownload(
       this.illustUrl(),
+      this.illustRange() || '',
       this.compressionFormat(),
-      this.illustRange() || ''
     );
   }
 
   private downloadViaAPI(): void {
     this.zipixivService.downloadIllustrations(
       this.illustUrl(),
+      this.illustRange() || '',
       this.compressionFormat(),
-      this.illustRange() || undefined
     ).subscribe({
       next: (response) => {
         const url = window.URL.createObjectURL(response.blob);
