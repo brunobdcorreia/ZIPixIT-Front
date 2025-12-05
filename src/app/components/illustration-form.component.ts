@@ -160,6 +160,10 @@ export class IllustrationFormComponent {
     this.errorMessage.set('');
     this.compressionFormat.set(this.compressionFormat() || 'zip');
 
+    this.socketService.downloadCompleted.next(false);  // ← Add this
+    this.socketService.downloadError.next(null);       // ← Add this
+    this.socketService.downloadedImages.set([]);
+
     if (this.showLiveDisplay()) {
       this.downloadViaWebSocket();
     } else {
@@ -168,9 +172,6 @@ export class IllustrationFormComponent {
   }
 
   private downloadViaWebSocket(): void {
-    // Reset gallery
-    this.socketService.downloadedImages.set([]);
-
     // Subscribe to download completion
     const completionSub = this.socketService.downloadCompleted.subscribe(completed => {
       if (completed) {
@@ -191,6 +192,7 @@ export class IllustrationFormComponent {
     });
 
     console.log("Format selected:", this.compressionFormat());
+    
     // Start WebSocket download
     this.socketService.startWebSocketDownload(
       this.illustUrl(),

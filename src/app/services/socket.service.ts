@@ -109,7 +109,13 @@ export class SocketService {
                 message: data.message,
                 total: data.total
             });
-            this.downloadCompleted.next(true);
+
+            // Reset states after a short delay to ensure UI updates
+            setTimeout(() => {
+                this.downloadCompleted.next(true);
+                this.downloadError.next(null);
+            }, 100);
+
             const zipData = data.archive_data;
             const link = document.createElement('a');
             link.href = `data:application/octet-stream;base64,${zipData}`;
@@ -120,6 +126,7 @@ export class SocketService {
         this.socket.on(WebSocketEvent.DOWNLOAD_ERROR, (data) => {
             this.downloadError.next(data.message);
             this.downloadProgress.next(null);
+            this.downloadCompleted.next(false);
         });
     }
 
