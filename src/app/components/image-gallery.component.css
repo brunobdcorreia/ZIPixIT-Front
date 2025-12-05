@@ -1,12 +1,12 @@
 .gallery-container {
-  width: 90%;
-  max-width: 600px;
+  width: 95%;
+  max-width: 750px;  /* ← Now can be wider */
   margin: 0 auto;
   padding: 1.5rem;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-height: 400px;  /* ← Fixed height */
+  max-height: 100%;  /* ← Fill available space */
   overflow-y: auto;
   overflow-x: hidden;
 }

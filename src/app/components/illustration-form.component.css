@@ -15,7 +15,7 @@ form {
   flex-direction: column;
   align-items: center;
   margin-top: 0;
-  flex-shrink: 0;  /* ← Form doesn't shrink */
+  flex-shrink: 0;
   padding: 2rem 0 1rem 0;
 }
 
@@ -32,7 +32,7 @@ form {
 .subtitle {
   width: 100%;
   text-align: left;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   margin-top: 0;
   flex-shrink: 0;
 }
@@ -40,16 +40,18 @@ form {
 .subtitle h2 {
   margin: 0 0 0.5rem 0;
   color: #f3f3f3;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Sawarabi Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle p {
   margin: 0;
   color: #f3f3f3;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 0.95rem;
+  font-family: 'Sawarabi Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2rem;
   line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-text {
@@ -170,16 +172,22 @@ form {
   font-size: 0.95rem;
 }
 
-/* Gallery Container */
+/* Gallery Container - Full width without flex constraints */
 app-image-gallery {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  flex: 1;  /* ← Takes remaining space */
-  min-height: 0;  /* ← Important: allows flex child to be smaller */
+  max-height: 45vh;  /* ← Takes up to half viewport height */
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
   padding: 2rem 0;
+  background: #0096fa;
+  z-index: 5;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Toggle Switch */
@@ -262,7 +270,7 @@ app-image-gallery {
 /* Row Container for Range Input and Tooltip */
 .row-container {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: center;
   width: 100%;
   gap: 0.75rem;
