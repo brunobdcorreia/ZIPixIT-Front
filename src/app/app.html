@@ -8,6 +8,31 @@
   </head>
   <body>
     <link rel="stylesheet" href="./app.css">
+    
+    <!-- Background Image as <img> tag -->
+    <img 
+      *ngIf="dailyIllustService()?.dailyIllustration()"
+      [src]="'data:image/jpeg;base64,' + dailyIllustService()?.dailyIllustration()?.image_base64"
+      alt="Daily illustration background"
+      class="background-image"
+    />
+    
+    <!-- Dark overlay -->
+    <div class="background-overlay"></div>
+    
+    <!-- Artist Credit Link (Bottom Right Corner) -->
+    <div class="artist-credit" *ngIf="dailyIllustService()?.dailyIllustration()">
+      <a 
+        [href]="'https://www.pixiv.net/artworks/' + (dailyIllustService()?.dailyIllustration()?.id || '')"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="illust-link"
+        [title]="dailyIllustService()?.dailyIllustration()?.title"
+      >
+        {{ languageService.getTranslation('artistCreditText') }} by {{ illustArtist }}
+      </a>
+    </div>
+
     <div class="column-container">
       <app-header [title]="title"></app-header>
       <app-illustration-form></app-illustration-form>

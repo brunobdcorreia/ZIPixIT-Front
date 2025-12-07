@@ -185,7 +185,8 @@ app-image-gallery {
   display: flex;
   justify-content: center;
   padding: 2rem 0;
-  background: #0096fa;
+  /* background-color: #0096fa; */
+  background-color: transparent;
   z-index: 5;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
