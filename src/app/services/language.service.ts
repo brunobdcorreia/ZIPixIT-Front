@@ -18,6 +18,7 @@ export const translations: Record<Language, Record<string, string>> = {
     download: 'Download',
     downloading: 'Downloading...',
     showImagesAsTheyDownload: 'Show images as they download',
+    artistCreditText: 'Today\'s number one Pixiv Ranking illustration',
     about: 'About',
     aboutText: `<p>
                   <strong>Zipixit</strong> is a simple tool designed to help you download illustrations from Pixiv.
@@ -49,6 +50,7 @@ export const translations: Record<Language, Record<string, string>> = {
     download: 'ダウンロード',
     downloading: 'ダウンロード中...',
     showImagesAsTheyDownload: 'ダウンロードを完了した画像を表示する',
+    artistCreditText: '本日のPixivランキング1位のイラスト',
     about: 'ZIPixITについて',
     aboutText: `<p>
                   <strong>ZIPixIT</strong>はPixivから簡単にイラストをダウンロードすることを優先し設計されたツール.
