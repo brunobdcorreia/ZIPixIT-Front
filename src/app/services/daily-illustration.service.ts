@@ -1,6 +1,7 @@
 import { Inject, Injectable, signal, PLATFORM_ID } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../environments/environment';
 
 export interface DailyIllustration {
   id: number;
@@ -28,7 +29,7 @@ export class DailyIllustrationService {
     this.isLoading.set(true);
     this.error.set(null);
 
-    this.http.get<DailyIllustration>(`api/daily_top_illust`)
+    this.http.get<DailyIllustration>(`${environment.apiUrl}/daily_top_illust`)
       .subscribe({
         next: (data) => {
           console.log('Daily illustration data loaded:', data);
