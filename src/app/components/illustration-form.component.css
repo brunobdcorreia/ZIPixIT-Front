@@ -40,7 +40,6 @@ form {
 .subtitle h2 {
   margin: 0 0 0.5rem 0;
   color: #f3f3f3;
-  font-family: 'Sawarabi Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2.5rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -48,17 +47,16 @@ form {
 .subtitle p {
   margin: 0;
   color: #f3f3f3;
-  font-family: 'Sawarabi Gothic','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 2rem;
   line-height: 1.5;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .toggle-text {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
   color: #f3f3f3;
   user-select: none;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .full-width-container {
@@ -168,7 +166,6 @@ form {
 .progress-message {
   margin: 0;
   color: #0096fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 0.95rem;
 }
 
@@ -197,7 +194,6 @@ app-image-gallery {
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #f3f3f3;
 }
 
@@ -246,7 +242,6 @@ app-image-gallery {
 }
 
 .download-button {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
     width: 60%;
     padding: 0.5rem 1.5rem;
