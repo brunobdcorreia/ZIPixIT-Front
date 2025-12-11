@@ -1,6 +1,10 @@
 # ZIPixit Client
 
-A modern Angular web application for downloading Pixiv illustrations with real-time progress tracking and multiple compression format support.
+A modern Angular web application for zipping and downloading Pixiv illustrations with real-time progress tracking and multiple compression format support.
+
+Available at [ZIPixIT](https://zipixit.com)
+
+![A GIF demonstrating the webpage at work](./readme%20assets/zipixit%20demo.gif)
 
 ## Features
 
@@ -11,78 +15,18 @@ A modern Angular web application for downloading Pixiv illustrations with real-t
 - 🎨 **Modern UI** - Built with Angular and responsive design
 - 🚀 **Fast & Optimized** - Production-ready build with gzip compression
 
+## Language support
+
+Currently supports the following languages:
+- Japanese (日本語)
+- English
+
+
 ## Prerequisites
 
 - **Node.js** 18.x or higher
 - **npm** 9.x or higher
 - **Angular CLI** 17.x or higher
-
-## Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/zipixiv-client.git
-   cd zipixiv-client
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Environment Configuration**
-   
-   Update `src/environments/environment.ts` for development:
-   ```typescript
-   export const environment = {
-     production: false,
-     apiUrl: 'http://localhost:5000/api',
-     socketUrl: 'http://localhost:5000'
-   };
-   ```
-
-## Development
-
-### Start Development Server
-
-Follow the instructions at and run [ZIPixIT Back](https://github.com/brunobdcorreia/ZIPixIT-Back).
-
-```
-
-### Run Unit Tests
-
-```bash
-ng test
-```
-
-### Run End-to-End Tests
-
-```bash
-ng e2e
-```
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── components/
-│   │   ├── header.component.ts
-│   │   ├── illustration-form.component.ts
-│   │   ├── image-gallery.component.ts
-│   │   ├── range-tooltip.component.ts
-│   │   └── error-message.component.ts
-│   ├── services/
-│   │   ├── zipixiv.service.ts          # API calls
-│   │   ├── socket.service.ts           # WebSocket/Socket.io
-│   │   └── language.service.ts         # i18n
-│   ├── app.ts                          # Root component
-│   └── app.css                         # Global styles
-├── environments/
-│   ├── environment.ts                  # Development
-│   └── environment.prod.ts             # Production
-└── index.html                          # Entry point
-```
 
 ## Configuration
 
@@ -90,9 +34,8 @@ src/
 
 The application communicates with the backend at:
 - **HTTP API:** `{apiUrl}/download`
-- **WebSocket:** `{socketUrl}/socket.io`
+- **WebSocket:** `{socketUrl}/`
 
-Update these in `src/environments/environment.ts`
 
 ### Compression Formats
 
@@ -118,7 +61,7 @@ Supported formats configured in form:
    - Select ZIP, 7z, or TAR.GZ
 
 4. **Enable Live Display (Optional)**
-   - Toggle to see images as they download in real-time
+   - Toggle to see images as they download in real-time (not recommended for NSFW artworks)
 
 5. **Download**
    - Click "Download" and wait for completion
@@ -132,35 +75,6 @@ Supported formats configured in form:
 - **Real-time:** Socket.io
 - **HTTP:** RxJS
 
-## Deployment
-
-### Docker
-
-```bash
-# Build Docker image
-docker build -t zipixiv-client .
-
-# Run container
-docker run -p 80:80 zipixiv-client
-```
-
-### Static Hosting (GitHub Pages, Netlify, Vercel)
-
-```bash
-# Build for production
-ng build --configuration production
-
-# Deploy the dist/ folder to your hosting provider
-```
-
-### Nginx Configuration
-
-See `infra/nginx.conf` for production Nginx setup.
-
-## Environment Variables
-
-No environment variables required for the frontend. All configuration is done through `src/environments/environment.ts`.
-
 ## Browser Support
 
 - Chrome/Edge 90+
@@ -168,27 +82,50 @@ No environment variables required for the frontend. All configuration is done th
 - Safari 14+
 - Opera 76+
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+Feel free to alter this code and modify its expected behaviour in any way you see fit.
 
 ## Acknowledgments
 
-- [Angular](https://angular.io/) - Frontend framework
-- [Socket.io](https://socket.io/) - Real-time communication
-- [Pixiv](https://www.pixiv.net/) - Image source
+### Libraries & Frameworks
+- [Flask](https://flask.palletsprojects.com/) - Web framework
+- [Flask-SocketIO](https://flask-socketio.readthedocs.io/) - Real-time WebSocket communication
+- [Flask-CORS](https://flask-cors.readthedocs.io/) - Cross-Origin Resource Sharing
+- [pixivpy3](https://github.com/upbit/pixivpy3) - Pixiv API client library
+- [Eventlet](https://eventlet.net/) - Coroutine-based networking library
+
+### Data Processing & Compression
+- [py7zr](https://py7zr.readthedocs.io/) - 7z archive support
+- [tarfile](https://docs.python.org/3/library/tarfile.html) - TAR archive creation
+- [zipfile](https://docs.python.org/3/library/zipfile.html) - ZIP archive creation
+- [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) - HTML parsing
+
+### Frontend
+- [Angular](https://angular.io/) - Modern web application framework
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript superset
+- [RxJS](https://rxjs.dev/) - Reactive programming library
+
+### Deployment & Infrastructure
+- [Docker](https://www.docker.com/) - Containerization platform
+- [Nginx](https://nginx.org/) - High-performance web server & reverse proxy
+- [DigitalOcean](https://www.digitalocean.com/) - Cloud infrastructure provider
+- [Let's Encrypt](https://letsencrypt.org/) - Free SSL/TLS certificates
+- [Certbot](https://certbot.eff.org/) - Let's Encrypt automation tool
+
+### External Services
+- [Pixiv](https://www.pixiv.net/) - Image source and inspiration
+
+### Special Thanks
+- **upbit** - Creator of [PixivPy3](https://github.com/upbit/pixivpy3), without which this project wouldn't be possible (or I'd have to develop the API myself which would be a huge pain)
+- **The open-source community** - For creating and maintaining the amazing libraries that power this project
 
 ## Changelog
 
-### v1.0.0 (2024-12-05)
+### v1.0.1 (2025-12-11)
+- Added button for minimising image gallery
+
+### v1.0.0 (2025-12-05)
 - Initial release
 - Real-time image gallery
 - Multiple compression formats
