@@ -8,6 +8,8 @@ Available at [ZIPixIT](https://zipixit.com)
 
 ![A GIF demonstrating the webpage at work](./readme%20assets/zipixit%20demo.gif)
 
+This tool is is no way affiliated with Pixiv. All illustrations are copyrighted by their authors and the source website. If you are the creator of an illustration and you do not want for your illustration to be displayed on this application, please reach out.
+
 ## Features
 
 - 🖼️ **Real-time Image Gallery** - View images as they download in real-time
