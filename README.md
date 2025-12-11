@@ -2,13 +2,13 @@
 
 A modern Angular web application for zipping and downloading Pixiv illustrations with real-time progress tracking and multiple compression format support.
 
-This is my first comprehensive full-stack project, and therefore bugs may occur. In that case, please open an issue so I can have a look it :\)
+This is my first comprehensive full-stack project, and therefore bugs may occur. In that case, please open an issue so I can have a look at it :\)
 
 Available at [ZIPixIT](https://zipixit.com)
 
 ![A GIF demonstrating the webpage at work](./readme%20assets/zipixit%20demo.gif)
 
-This tool is is no way affiliated with Pixiv. All illustrations are copyrighted by their authors and the source website. If you are the creator of an illustration and you do not want for your illustration to be displayed on this application, please reach out.
+This tool is in no way affiliated with Pixiv. All illustrations are copyrighted by their authors and the source website. If you are the creator of an illustration and you do not want for your illustration to be displayed on this application, please reach out.
 
 ## Features
 
